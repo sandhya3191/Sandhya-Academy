@@ -1,0 +1,36 @@
+<div class="section-header">
+    <h1>Popular Courses</h1>
+</div>
+<div class="home-page-popular-courses">
+    <div class="home-page-popular-courses-desc">
+        <p>
+            <b>Highest rated courses by students: </b>
+            Discover our most popular courses at Sandhya Academy! From Angular Development and Node.js Fundamentals to Machine Learning Essentials and Cybersecurity Fundamentals, we offer comprehensive training in today's most sought-after technologies. Dive into practical, hands-on learning experiences designed to propel your career forward and stay ahead in the ever-evolving IT landscape. Join us and unlock your potential with our top-rated courses today!
+        </p>
+    </div>
+    <div class="course-card" *ngFor="let course of popularCourses">
+        <div class="course-image">
+            <img [src]="course.image">
+        </div>
+        <div class="course-title">
+            {{ course.title }}
+        </div>
+        <div class="course-desc">
+            {{ course.desc.substring(0, 120) }}
+        </div>
+        <div class="course-price-rating">
+            <div class="course-price"><b>PRICE:</b> {{ course.price | currency }}</div>
+            <div class="course-rating"><b>RATINGS:</b> {{ course.rating }}</div>
+        </div>
+        <div class="course-action-buttons">
+            <button class="btn">BUY NOW</button>
+            <button class="btn">DETAILS</button>
+        </div>
+    </div>
+    <div class="popular-course-bottom">
+        <button class="go-to-course-button" (click)="navigateToCourses()">
+            Go to Courses Page 
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
